@@ -47,7 +47,7 @@ contract NerdyCoderClones is ERC721Enumerable, Ownable {
         }
     }
 
-    for (uint256 i = 0; i <= _mintAmount; i++) {
+    for (uint256 i = 1; i <= _mintAmount; i++) {
       _safeMint(_to, supply + i);
     }
   }
