@@ -13,9 +13,9 @@ contract NerdyCoderClones is ERC721Enumerable, Ownable {
 
   string public baseURI;
   string public baseExtension = ".json";
-  uint256 public cost = 100 ether;
-  uint256 public maxSupply = 1000;
-  uint256 public maxMintAmount = 20;
+  uint256 public cost = 0.15 ether;
+  uint256 public maxSupply = 40;
+  uint256 public maxMintAmount = 2;
   bool public paused = false;
   mapping(address => bool) public whitelisted;
 
@@ -25,7 +25,7 @@ contract NerdyCoderClones is ERC721Enumerable, Ownable {
     string memory _initBaseURI
   ) ERC721(_name, _symbol) {
     setBaseURI(_initBaseURI);
-    mint(msg.sender, 20);
+    mint(msg.sender, 1);
   }
 
   // internal
@@ -47,7 +47,7 @@ contract NerdyCoderClones is ERC721Enumerable, Ownable {
         }
     }
 
-    for (uint256 i = 1; i <= _mintAmount; i++) {
+    for (uint256 i = 0; i <= _mintAmount; i++) {
       _safeMint(_to, supply + i);
     }
   }
