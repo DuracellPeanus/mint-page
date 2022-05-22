@@ -14,7 +14,7 @@ contract NerdyCoderClones is ERC721Enumerable, Ownable {
   string public baseURI;
   string public baseExtension = ".json";
   uint256 public cost = 0.15 ether;
-  uint256 public maxSupply = 40;
+  uint256 public maxSupply = 4000;
   uint256 public maxMintAmount = 2;
   bool public paused = false;
   mapping(address => bool) public whitelisted;
